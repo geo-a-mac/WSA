@@ -69,3 +69,8 @@ body {
     cursor: pointer;
 }
 /* end style modal */
+/* style map container */
+#map {
+    width: 50%;
+    height: 400px;
+}
