@@ -1,200 +1,258 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial;
-  margin: 0;
-}
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: beige;
+    }
 
-* {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-img {
-  vertical-align: middle;
-}
+    img {
+      vertical-align: middle;
+    }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: relative;
+    }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
 
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 16.66%;
+    }
 
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
+    /* Add a transparency effect for thumnbail images */
 
-.active,
-.demo:hover {
-  opacity: 1;
-}
+    .demo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
 
-</style>
-<body>
+    .active .demo:hover {
+      opacity: 1;
+    }
+    .mySlides img {
+      height: 50%;
+    }
+  </style>
+  <body>
+    <h2 style="text-align: center">Photo Gallery</h2>
 
-<h2 style="text-align:center">West Side <span>Aspects</span></h2>
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 6</div>
+        <img
+          src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg"
+        />
+      </div>
 
-<div class="container">
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-    <img src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg">
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">2 / 6</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1"
+          style="width: 100%"
+        />
+      </div>
 
-  <div class="mySlides">
-    <div class="numbertext">2 / 6</div>
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1" style="width:100%">
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">3 / 6</div>
+        <img
+          src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg"
+          style="width: 100%"
+        />
+      </div>
 
-  <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
-    <img src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg" style="width:100%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
-    <img src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w" style="width:100%">
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">4 / 6</div>
+        <img
+          src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w"
+          style="width: 100%"
+        />
+      </div>
 
-  <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1" style="width:100%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1" style="width:100%">
-  </div>
-    
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
+      <div class="mySlides">
+        <div class="numbertext">5 / 6</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1"
+          style="width: 100%"
+        />
+      </div>
 
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">6 / 6</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1"
+          style="width: 100%"
+        />
+      </div>
 
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg" style="width:100%" onclick="currentSlide(1)" alt="Mercedes House">
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg"
+            style="width: 100%"
+            onclick="currentSlide(1)"
+            alt="Mercedes House"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(2)"
+            alt="520 West 28th"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg"
+            style="width: 100%"
+            onclick="currentSlide(3)"
+            alt="The Vessel"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w"
+            style="width: 100%"
+            onclick="currentSlide(4)"
+            alt="Via 57 West"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(5)"
+            alt="Lantern House"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(6)"
+            alt="The Shed"
+          />
+        </div>
+      </div>
     </div>
-    <div class="column">
-      <img class="demo cursor" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1" style="width:100%" onclick="currentSlide(2)" alt="520 West 28th">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Vessel">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w" style="width:100%" onclick="currentSlide(4)" alt="Via 57 West">
-    </div>
-    <div class="column">
-      <img class="demo cursor" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1" style="width:100%" onclick="currentSlide(5)" alt="Lantern House">
-    </div>    
-    <div class="column">
-      <img class="demo cursor" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1" style="width:100%" onclick="currentSlide(6)" alt="The Shed">
-    </div>
-  </div>
-</div>
 
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
-
-<a data-flickr-embed="true" data-vr="true" href="https://www.flickr.com/photos/hamburgerjung/36345498945/" title="Volkspark by HamburgerJung, on Flickr"><img src="https://live.staticflickr.com/4312/36345498945_d2451915dd_b.jpg" width="50%" alt="Volkspark"></a><script async src="https://embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
-    
-</body>
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+  </body>
 </html>

@@ -43,4 +43,3 @@ modalBtn.addEventListener("click", openModal);
 closeBtn.addEventListener("click", closeModal);
 // for click outside Modal to close Modal
 window.addEventListener("click", clickOutside);
-
