@@ -20,6 +20,22 @@ var clickOutside = function(e) {
     }
 }
 
+var map;
+const pos = { lat: 40.774857, lng: -73.984195};
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    center: pos,
+    zoom: 19
+  });
+
+  const marker = new google.maps.Marker({
+    position: pos,
+    map: map
+  });
+}
+
+initMap();
+
 //event listeners
 // for button to open Modal
 modalBtn.addEventListener("click", openModal);
