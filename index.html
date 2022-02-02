@@ -1,197 +1,560 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial;
-  margin: 0;
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #;
+    }
+
+    li {
+      float: left;
+      font-size:  30px;
+    }
+
+    a {
+      display: block;
+      padding: 8px;
+      background-color: #dddddd;
+    }
+
+    li a {
+      display: block;
+      color: darkorange;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+      background-color: white;
+    }
+
+    body {
+      font-family: Arial;
+      margin: 0;
+      background-color: #dddddd;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    img {
+      vertical-align: middle;
+    }
+
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+      position: static;
+      text-align: center;
+    }
+
+    /* Hide the images by default */
+    .mySlides {
+      display: none;
+    }
+
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+      cursor: pointer;
+    }
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+      cursor: pointer;
+      position: absolute;
+      top: 40%;
+      width: auto;
+      padding: 16px;
+      margin-top: -50px;
+      color: white;
+      font-weight: bold;
+      font-size: 20px;
+      border-radius: 0 3px 3px 0;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* Position the "next button" to the right */
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+
+    /* On hover, add a black background color with a little bit see-through */
+    .prev:hover,
+    .next:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Number text (1/3 etc) */
+    .numbertext {
+      color: #f2f2f2;
+      font-size: 12px;
+      padding: 8px 12px;
+      position: absolute;
+      top: 0;
+    }
+
+    /* Container for image text */
+    .caption-container {
+      text-align: center;
+      background-color: #222;
+      padding: 2px 16px;
+      color: white;
+    }
+
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Six columns side by side */
+    .column {
+      float: left;
+      width: 10%;
+    }
+
+    /* Add a transparency effect for thumnbail images */
+
+    .demo {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      opacity: 0.6;
+    }
+
+    .active, .demo:hover {
+      opacity: 1;
+    }
+
+    .mySlides img {
+      height: 50%;
+    }
+
+    .card {
+	border: 1px solid #2c2c2c;
+	display: inline-block;
+	margin: 10px 20px;
+	width: 200px;
+	font-family: "Lucida Console"
 }
 
-* {
-  box-sizing: border-box;
+.card .card-title {
+	margin-top: 0;
 }
 
-img {
-  vertical-align: middle;
+.card .card-content {
+	padding: 10px;
 }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
+#information {
   color: white;
-  font-weight: bold;
+}
+
+#mercedes {
+  background-color: purple;
+}
+
+#hadid {
+  background-color: blue;
+}
+
+#vessel {
+  background-color: green;
+}
+
+#via {
+  background-color: yellow;
+}
+
+#lantern {
+  background-color: orange;
+}
+
+#shed {
+  background-color: red;
+}
+
+#standard {
+  background-color: black;
+}
+
+#waterline {
+  background-color: grey;
+}
+
+#end {
+  background-color: rgba(202, 109, 21, 0.37);
+}
+
+west {
+  background-color: white;
+  color: black;
+}
+
+.title span {
+  color: green;
   font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
+  vertical-align: super;
 }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
 .numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+  position: static;
+  font-size: 15px;
+  color: black;
 }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
+.virtual {
+  margin-top: 30px;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+.virtual p {
+  font-size: 28px;
 }
 
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
+  </style>
+  <body>
+<nav>
+  <ul>
+    <li><a href=#information">Building Info</a></li>
+    <li><a href=#tour">MetaVerse AR Tour</a></li>
+    <li><a href=#upcoming">Upcoming Sites</a></li>
+    <li><a href=#background">About Us</a></li>
+  </ul>
+</nav>
 
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
+    <h1 style="text-align: center" class="title"><span>West Side</span> Aspects</h1>
 
-.active,
-.demo:hover {
-  opacity: 1;
-}
-</style>
-<body>
+    <div class="container">
+      <div class="mySlides">
+        <div class="numbertext">1 / 10</div>
+        <img
+          src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg"
+          style="width: 50%"
+          />
+      </div>
 
-<h2 style="text-align:center">Slideshow Gallery</h2>
+      <div class="mySlides">
+        <div class="numbertext">2 / 10</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1"
+          style="width: 50%"
+        />
+      </div>
 
-<div class="container">
-  <div class="mySlides">
-    <div class="numbertext">1 / 6</div>
-    <img src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg">
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">3 / 10</div>
+        <img
+          src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg"
+          style="width: 50%"
+        />
+      </div>
 
-  <div class="mySlides">
-    <div class="numbertext">2 / 6</div>
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1" style="width:100%">
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">4 / 10</div>
+        <img
+          src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w"
+          style="width: 50%"
+        />
+      </div>
 
-  <div class="mySlides">
-    <div class="numbertext">3 / 6</div>
-    <img src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg" style="width:100%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">4 / 6</div>
-    <img src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w" style="width:100%">
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">5 / 10</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1"
+          style="width: 50%"
+        />
+      </div>
 
-  <div class="mySlides">
-    <div class="numbertext">5 / 6</div>
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1" style="width:100%">
-  </div>
-    
-  <div class="mySlides">
-    <div class="numbertext">6 / 6</div>
-    <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1" style="width:100%">
-  </div>
-    
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
+      <div class="mySlides">
+        <div class="numbertext">6 / 10</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1"
+          style="width: 50%"
+        />
+      </div>
 
-  <div class="caption-container">
-    <p id="caption"></p>
-  </div>
+      <div class="mySlides">
+        <div class="numbertext">7 / 10</div>
+        <img
+          src="http://s3-media4.fl.yelpcdn.com/bphoto/MeBVwLmtPV8Hsfzckc2ihQ/o.jpg"
+          style="width: 50%"
+        />
+      </div>
 
-  <div class="row">
-    <div class="column">
-      <img class="demo cursor" src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg" style="width:100%" onclick="currentSlide(1)" alt="Mercedes House">
+      <div class="mySlides">
+        <div class="numbertext">8 / 10</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.skyscrapercenter.com%2Fbuilding%2Ftectonic-media-inc_3399.jpg&f=1&nofb=1"
+          style="width: 50%"
+        />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">9 / 10</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wwglass.com%2Fwp-content%2Fuploads%2F2018%2F05%2F1-West-End-Avenue-Photo-1.jpg&f=1&nofb=1"
+          style="width: 50%"
+        />
+      </div>
+
+      <div class="mySlides">
+        <div class="numbertext">10 / 10</div>
+        <img
+          src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.eagletransfer.com%2Fwp-content%2Fuploads%2F2018%2F04%2F5-manhattan-west.jpg&f=1&nofb=1"
+          style="width: 50%"
+        />
+      </div>
+
+      <a class="prev" onclick="plusSlides(-1)">❮</a>
+      <a class="next" onclick="plusSlides(1)">❯</a>
+
+      <div class="caption-container">
+        <p id="caption"></p>
+      </div>
+
+      <div class="row">
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://ds3.cityrealty.com/img/71b48558b37d4f570f1b0922f286d5d782a4f8f8+w+h+0+60/mercedes-house-550-west-54th-street-01.jpg"
+            style="width: 100%"
+            onclick="currentSlide(1)"
+            alt="Mercedes House"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(2)"
+            alt="520 West 28th"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg"
+            style="width: 100%"
+            onclick="currentSlide(3)"
+            alt="The Vessel"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w"
+            style="width: 100%"
+            onclick="currentSlide(4)"
+            alt="Via 57 West"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(5)"
+            alt="Lantern House"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(6)"
+            alt="The Shed"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="http://s3-media4.fl.yelpcdn.com/bphoto/MeBVwLmtPV8Hsfzckc2ihQ/o.jpg"
+            style="width: 100%"
+            onclick="currentSlide(7)"
+            alt="The Standard"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.skyscrapercenter.com%2Fbuilding%2Ftectonic-media-inc_3399.jpg&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(8)"
+            alt="Three Waterline Square"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.wwglass.com%2Fwp-content%2Fuploads%2F2018%2F05%2F1-West-End-Avenue-Photo-1.jpg&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(9)"
+            alt="One West End"
+          />
+        </div>
+        <div class="column">
+          <img
+            class="demo cursor"
+            src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.eagletransfer.com%2Fwp-content%2Fuploads%2F2018%2F04%2F5-manhattan-west.jpg&f=1&nofb=1"
+            style="width: 100%"
+            onclick="currentSlide(10)"
+            alt="5 Manhattan West"
+          />
+        </div>
+      </div>
     </div>
-    <div class="column">
-      <img class="demo cursor" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.pinimg.com%2Foriginals%2F73%2F54%2Fe2%2F7354e28e1b9394745e6c661123574b8c.jpg&f=1&nofb=1" style="width:100%" onclick="currentSlide(2)" alt="520 West 28th">
+             
+    <div class="virtual">
+      <p>&#128694;&#127998;&#8205;&#9792;&#65039;___Take a Virtual Tour of a Building!___&#128694;&#127995;</p>
+<script src="https://360player.io/static/dist/scripts/embed.js" defer></script>
+<iframe src="https://360player.io/p/k6f7rb/" frameborder="0" width=560 height=315
+    allow="fullscreen; xr-spatial-tracking" data-token="k6f7rb"></iframe>
     </div>
-    <div class="column">
-      <img class="demo cursor" src="https://loving-newyork.com/wp-content/uploads/2019/03/Vessel-Hudson-Yards-190318151239001.jpg" style="width:100%" onclick="currentSlide(3)" alt="The Vessel">
+
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="mercedes">
+        <h2 class="card-title">Mercedes House</h2>
+        <p>This luxury rental open in 2012 and has 32 floors. It is located in Hell’s Kitchen. The architect	behind the design is Enrique Norten. The developer is the Two Trees Management Company.</p>
+      </section>
     </div>
-    <div class="column">
-      <img class="demo cursor" src="http://static1.squarespace.com/static/5164b16ae4b0cac6e79b081f/5164b16ae4b0cac6e79b0823/579b575fb3db2b1cc2534e68/1470148691137/2016_06_19+VIA+01.jpg?format=1500w" style="width:100%" onclick="currentSlide(4)" alt="Via 57 West">
+
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="hadid">
+        <h2 class="card-title">520 West 28th</h2>
+        <p>This buildings construction completed in June 2017. This structure is location in the neighborhood of Chelsea. The person behind the architectural design is Zaha Hadid. The developer behind it is The Related Companies.</p>
+      </section>
     </div>
-    <div class="column">
-      <img class="demo cursor" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fnewyorkyimby.com%2Fwp-content%2Fuploads%2F2019%2F11%2FIMG-5201-e1574361206598.jpg&f=1&nofb=1" style="width:100%" onclick="currentSlide(5)" alt="Lantern House">
-    </div>    
-    <div class="column">
-      <img class="demo cursor" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fstatic01.nyt.com%2Fimages%2F2019%2F04%2F05%2Fnyregion%2F05nytoday%2Fmerlin_148534968_6a191251-aab2-477c-b5e4-39dd30d26347-superJumbo.jpg%3Fquality%3D90%26auto%3Dwebp&f=1&nofb=1" style="width:100%" onclick="currentSlide(6)" alt="The Shed">
+
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="vessel">
+        <h2 class="card-title">The Vessel</h2>
+        <p>This 16 story honeycomb-like structure opened in March of 2019 in Hudson Yards. The pieces were manufactured in Italy and shipped to the US. The designer behind this structure is Thomas Heatherwick. The developer behind it is the Related Companies.</p>
+      </section>
     </div>
-  </div>
-</div>
 
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="via">
+        <h2 class="card-title">Via 57 West</h2>
+        <p>This 709 unit is located in Hell’s Kitchen. The construction was completed in 2016. Bjarke Ingels is the architect behind this structure. The developer is The Durst Organization.</p>
+      </section>
+    </div>
 
-function plusSlides(n) {
-  showSlides(slideIndex += n);
-}
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="lantern">
+        <h2 class="card-title">Lantern House</h2>
+        <p>This luxury condominium is located in Chelsea. It finished construction in 2021 and is comprised of 2 towers one being 10 stories and the other 21 stories. The architect behind it is Thomas Heatherwick. The developer is the Related Companies.</p>
+      </section>
+    </div>
 
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="shed">
+        <h2 class="card-title">The Shed</h2>
+        <p>It is located in Hudson Yards and opened in 2019. It is an eight-level art space. The architect and developers behind this building is Diller Scofidio & Renfro in collaboration with Rockwell Group.</p>
+      </section>
+    </div>
 
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("demo");
-  var captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
-}
-</script>
-    
-</body>
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="standard">
+        <h2 class="card-title">The Standard</h2>
+        <p>This 338 guest room structure is located in the Meatpacking. The construction was completed in 2009. The architect behind this building is Ennead Architect. The developer behind the creation is Andre Balazs Properties.</p>
+      </section>
+    </div>
+
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="waterline">
+        <h2 class="card-title">Three Waterline Square</h2>
+        <p>This building is one of the 3 buildings that makeup Waterline Square. It contains 244 units and is located in The architects behind the design are Rafael Vinoly and Christian de Portzamparc. The developer is the General Investment and Development Companies.</p>
+      </section>
+    </div>
+
+    <div class="card" id="information">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="end">
+        <h2 class="card-title">One West End</h2>
+        <p>This luxury condominium completed construction in 2017 and contains 246 units. It is located in Lincoln Square. The design was done by Pelli Clarke and Partners with interior designs by Jeffrey Beers. The developers are the Elad Group and Silvestein Properties.</p>
+      </section>
+    </div>
+
+    <div class="card">
+      <section class="card-img">
+        <img src="https://i1.wp.com/www.nysgis.net/wp-content/uploads/2019/03/nyslogo_418x200.png?fit=198%2C418&ssl=1">
+      </section>
+      <section class="card-content" id="west">
+        <h2 class="card-title">5 Manhattan West</h2>
+        <p>This building is one of 6 buildings that make up Manhattan West. Located in Hudson Yards, this office building is comprised of 16 floors and was built in 2019. The architects behind this building is Skidmore, Owings, and Merrill. The developer is Brookfield Properties. </p>
+      </section>
+    </div>
+
+    <script>
+      var slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+      }
+    </script>
+  </body>
 </html>
