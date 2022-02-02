@@ -12,6 +12,7 @@
 
     li {
       float: left;
+      font-size:  30px;
     }
 
     a {
@@ -22,7 +23,7 @@
 
     li a {
       display: block;
-      color: yellow;
+      color: darkorange;
       text-align: center;
       padding: 14px 16px;
       text-decoration: none;
@@ -36,7 +37,7 @@
     body {
       font-family: Arial;
       margin: 0;
-      background-color: beige;
+      background-color: #dddddd;
     }
 
     * {
@@ -126,14 +127,37 @@
       width: 100%;
       height: 200px;
       object-fit: cover;
+      opacity: 0.6;
     }
 
-    .active .demo:hover {
+    .active, .demo:hover {
       opacity: 1;
     }
     .mySlides img {
       height: 50%;
     }
+
+    .card {
+	border: 1px solid #2c2c2c;
+	display: inline-block;
+	margin: 10px 20px;
+	width: 200px;
+	font-family: "Lucida Console"
+}
+
+.card .card-title {
+	margin-top: 0;
+}
+
+.card .card-content {
+	padding: 10px;
+}
+
+#information {
+  background-color: purple;
+  color: white;
+}
+
   </style>
   <body>
 <nav>
@@ -263,6 +287,15 @@
 <script src="https://360player.io/static/dist/scripts/embed.js" defer></script>
 <iframe src="https://360player.io/p/k6f7rb/" frameborder="0" width=560 height=315
     allow="fullscreen; xr-spatial-tracking" data-token="k6f7rb"></iframe>
+
+    <div class="card" id="information">
+      <section class="card-img">
+      </section>
+      <section class="card-content">
+        <h2 class="card-title">Mercedes House</h2>
+        <p>This luxury rental open in 2012 and has 32 floors. It is located in Hell’s Kitchen. The architect	behind the design is Enrique Norten. The developer is the Two Trees Management Company.</p>
+      </section>
+    </div>
 
     <script>
       var slideIndex = 1;
