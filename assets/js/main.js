@@ -17,6 +17,24 @@ var closeBtn3 = document.getElementById("closeBtn3");
 var modalVessel = document.getElementById("modalVessel");
 var simpleVessel = document.getElementById("simpleVessel");
 var closeBtn4 = document.getElementById("closeBtn4");
+var modalMercedes = document.getElementById("modalMercedes");
+var simpleMercedes = document.getElementById("simpleMercedes");
+var closeBtn5 = document.getElementById("closeBtn5");
+var modalTWS = document.getElementById("modalTWS");
+var simpleTWS = document.getElementById("simpleTWS");
+var closeBtn6 = document.getElementById("closeBtn6");
+var modalLantern = document.getElementById("modalLantern");
+var simpleLantern = document.getElementById("simpleLantern");
+var closeBtn7 = document.getElementById("closeBtn7");
+var modalShed = document.getElementById("modalShed");
+var simpleShed = document.getElementById("simpleShed");
+var closeBtn8 = document.getElementById("closeBtn8");
+var modal1WE = document.getElementById("modal1WE");
+var simple1WE = document.getElementById("simple1WE");
+var closeBtn9 = document.getElementById("closeBtn9");
+var modal5MW = document.getElementById("modal5MW");
+var simple5MW = document.getElementById("simple5MW");
+var closeBtn10 = document.getElementById("closeBtn10");
 
 
 // open the modal 
@@ -34,6 +52,18 @@ var closeModal = function(e) {
     simpleVia57.style.display = "none";
   } else if (e.target === closeBtn4) {
     simpleVessel.style.display = "none";
+  } else if (e.target === closeBtn5) {
+    simpleMercedes.style.display = "none";
+  } else if (e.target === closeBtn6) {
+    simpleTWS.style.display = "none";
+  } else if (e.target === closeBtn7) {
+    simpleLantern.style.display = "none";
+  } else if (e.target === closeBtn8) {
+    simpleShed.style.display = "none";
+  } else if (e.target === closeBtn9) {
+    simple1WE.style.display = "none";
+  } else if (e.target === closeBtn10) {
+    simple5MW.style.display = "none";
   }
 };
 // close the modal if window is clicked
@@ -46,10 +76,103 @@ var clickOutside = function(e) {
       simpleVia57.style.display = "none";
     } else if (e.target === simpleVessel) {
       simpleVessel.style.display = "none";
+    } else if (e.target === simpleMercedes) {
+      simpleMercedes.style.display = "none";
+    } else if (e.target === simpleTWS) {
+      simpleTWS.style.display = "none";
+    } else if (e.target === simpleLantern) {
+      simpleLantern.style.display = "none";
+    } else if (e.target === simpleShed) {
+      simpleShed.style.display = "none";
+    } else if (e.target === simple1WE) {
+      simple1WE.style.display = "none";
+    } else if (e.target === simple5MW) {
+      simple5MW.style.display = "none";
     }
     /*if(e.target === modal) {
         modal.style.display = "none";
     }*/
+}
+//5MW
+var open5MW = function() {
+  simple5MW.style.display = "block";
+  var map;
+    map = new google.maps.Map(document.getElementById("map6"), {
+    center: { lat: 40.75227, lng: -73.99808 },
+    zoom: 17
+  });
+  const marker = new google.maps.Marker( {
+    position: { lat: 40.75227, lng: -73.99808 },
+    map: map
+  });
+}
+
+//1WE
+var open1WE = function() {
+  simple1WE.style.display = "block";
+  var map;
+    map = new google.maps.Map(document.getElementById("map9"), {
+    center: { lat: 40.77210, lng: -73.99034 },
+    zoom: 17
+  });
+  const marker = new google.maps.Marker( {
+    position: { lat: 40.77210, lng: -73.99034 },
+    map: map
+  });
+}
+
+//Shed
+var openShed = function() {
+  simpleShed.style.display = "block";
+  var map;
+    map = new google.maps.Map(document.getElementById("map8"), {
+    center: { lat: 40.75331, lng: -74.00226 },
+    zoom: 17
+  });
+  const marker = new google.maps.Marker( {
+    position: { lat: 40.75331, lng: -74.00226 },
+    map: map
+  });
+}
+
+//Lantern
+var openLantern = function() {
+  simpleLantern.style.display = "block";
+  var map;
+    map = new google.maps.Map(document.getElementById("map7"), {
+    center: { lat: 40.74535, lng: -74.00654 },
+    zoom: 17
+  });
+  const marker = new google.maps.Marker( {
+    position: { lat: 40.74535, lng: -74.00654 },
+    map: map
+  });
+}
+
+var openTWS = function() {
+  simpleTWS.style.display = "block";
+  var map;
+    map = new google.maps.Map(document.getElementById("map6"), {
+    center: { lat: 40.76357, lng: -73.99037 },
+    zoom: 17
+  });
+  const marker = new google.maps.Marker( {
+    position: { lat: 40.76357, lng: -73.99037 },
+    map: map
+  });
+}
+
+var openMercedes = function() {
+  simpleMercedes.style.display = "block";
+  var map;
+    map = new google.maps.Map(document.getElementById("map5"), {
+    center: { lat: 40.76796, lng: -73.99171 },
+    zoom: 17
+  });
+  const marker = new google.maps.Marker( {
+    position: { lat: 40.76796, lng: -73.99171 },
+    map: map
+  });
 }
 
 var openVessel = function() {
@@ -124,3 +247,15 @@ modalVia57.addEventListener("click", openVia57);
 closeBtn3.addEventListener("click", closeModal);
 modalVessel.addEventListener("click", openVessel);
 closeBtn4.addEventListener("click", closeModal);
+modalMercedes.addEventListener("click", openMercedes);
+closeBtn5.addEventListener("click", closeModal);
+modalTWS.addEventListener("click", openTWS);
+closeBtn6.addEventListener("click", closeModal);
+modalLantern.addEventListener("click", openLantern);
+closeBtn7.addEventListener("click", closeModal);
+modalShed.addEventListener("click", openShed);
+closeBtn8.addEventListener("click", closeModal);
+modal1WE.addEventListener("click", open1WE);
+closeBtn9.addEventListener("click", closeModal);
+modal5MW.addEventListener("click", open5MW);
+closeBtn10.addEventListener("click", closeModal);

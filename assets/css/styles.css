@@ -24,14 +24,16 @@ body {
     line-height: 1.6;
 }
 
-#modalBtn {
+.button {
     background: coral;
+    width: 200px;
     padding: 1em 2em;
+    margin: 1em;
     color: white;
     border: 0;
 }
 
-#modalBtn:hover {
+.button:hover {
     background: darkgray;
 }
 
