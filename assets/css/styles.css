@@ -1,3 +1,22 @@
+body {
+    background-color: lightgray;
+  }
+  header {
+    text-align: center;
+    font-size: x-large;
+    color: darkorange;
+  }
+  h1 {
+    text-align: center;
+    color: green;
+  }
+  p {
+    text-align: center;
+  }
+
+  h2 {
+    font-size: medium;
+}
 /* Style for modal */
 body {
     font-family: Arial, Helvetica, sans-serif;
@@ -5,14 +24,14 @@ body {
     line-height: 1.6;
 }
 
-.button {
+#modalBtn {
     background: coral;
     padding: 1em 2em;
     color: white;
     border: 0;
 }
 
-.button:hover {
+#modalBtn:hover {
     background: darkgray;
 }
 
@@ -57,20 +76,20 @@ body {
     text-align: center;
 }
 
-#closeBtn {
+.closeBtn {
     color: white;
     float: right;
     font-size: 30px;
 }
 
-#closeBtn:hover, #closeBtn:focus {
+.closeBtn:hover, .closeBtn:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
 }
 /* end style modal */
 /* style map container */
-#map {
-    width: 50%;
+.map {
+    width: 100%;
     height: 400px;
 }
