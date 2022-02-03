@@ -35,13 +35,58 @@ var closeBtn9 = document.getElementById("closeBtn9");
 var modal5MW = document.getElementById("modal5MW");
 var simple5MW = document.getElementById("simple5MW");
 var closeBtn10 = document.getElementById("closeBtn10");
+var showWeather = document.getElementById("showWeather");
+var emailSub = document.getElementById("emailSub");
+var emailEntry = document.getElementById("emailEntry");
+var message = document.getElementById("message");
 
-
-// open the modal 
-var openModal = function() {
-    console.log("modal clicked");
-    modal.style.display = "block";
+// weather functionality
+// 1. get the weather
+// 2. formate & display weather
+var getWeather = function() {
+  // format the openweather api url
+  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=New&20York&units=imperial&appid=80ef5c6717f3834714ead7f302cc767c";
+  
+  // make a get request to url
+  fetch(apiUrl)
+    .then(function(response) {
+      // request was successful
+      if (response.ok) {
+          response.json().then(function(data) {
+          displayWeather(data);
+        });
+      } else {
+        alert("Error: the city searched for is " + response.statusText);
+      }
+    })
+    .catch(function(error) {
+      alert("Unable to connect");
+    });
 };
+
+var displayWeather = function(data) {
+  /* display the weather and forecast for searchCity */
+  var cName = data.city.name;
+  var dttm = convertDate(data.list[0].dt);
+  var temp = data.list[0].main.temp;
+  var descr = data.list[0].weather[0].main;
+  var wind = data.list[0].wind.speed;
+  var humid = data.list[0].main.humidity;
+  showWeather.textContent = "Weather in New York: " + dttm + ": Temp: " + temp + "F. Wind speed: " + wind + "mph. Humidity: " + humid + "%";  
+}
+var convertDate = function(date) {
+  let timestamp = date;
+  // Create a new JavaScript Date object based on the timestamp
+  // multiplied by 1000 so that the argument is in milliseconds, not seconds.
+  var uFormDate = new Date(timestamp * 1000);
+  var month = uFormDate.getMonth() + 1;
+  var date = uFormDate.getDate();
+  var year = uFormDate.getFullYear();
+  // Will display date in MM/DD/YYYY formate
+  var formattedDate = month + '\/' + date + '\/' + year;
+  return formattedDate;
+}
+
 // close the modal
 var closeModal = function(e) {
   if(e.target === closeBtn1) {
@@ -64,6 +109,8 @@ var closeModal = function(e) {
     simple1WE.style.display = "none";
   } else if (e.target === closeBtn10) {
     simple5MW.style.display = "none";
+  } else if (e.target === closeBtn) {
+    modal.style.display = "none";
   }
 };
 // close the modal if window is clicked
@@ -88,16 +135,23 @@ var clickOutside = function(e) {
       simple1WE.style.display = "none";
     } else if (e.target === simple5MW) {
       simple5MW.style.display = "none";
-    }
-    /*if(e.target === modal) {
+    } else if (e.target === modal) {
         modal.style.display = "none";
-    }*/
+    };
 }
+// open the modals
+var openModal = function() {
+  modal.style.display = "block";
+  var prevEmail = JSON.parse(localStorage.getItem("e-mail"));
+  if (prevEmail) {
+    message.textContent = "We have the following e-mail already on file: " + prevEmail;
+  }
+};
 //5MW
 var open5MW = function() {
   simple5MW.style.display = "block";
   var map;
-    map = new google.maps.Map(document.getElementById("map6"), {
+    map = new google.maps.Map(document.getElementById("map10"), {
     center: { lat: 40.75227, lng: -73.99808 },
     zoom: 17
   });
@@ -228,6 +282,15 @@ const marker = new google.maps.Marker( {
 
 }
 
+var getEmail = function() {
+  var email = emailEntry.value;
+  if (email) {
+    localStorage.setItem("e-mail", JSON.stringify(email));
+  }
+}
+
+
+getWeather();
 function initMap() {};
 //initMap();
 
@@ -259,3 +322,4 @@ modal1WE.addEventListener("click", open1WE);
 closeBtn9.addEventListener("click", closeModal);
 modal5MW.addEventListener("click", open5MW);
 closeBtn10.addEventListener("click", closeModal);
+emailSub.addEventListener("click", getEmail);

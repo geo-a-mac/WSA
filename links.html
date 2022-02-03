@@ -190,7 +190,7 @@
           <div id="simple5MW" class="modal">
               <div class="modal-content">
                   <div class="modal-header"><span id="closeBtn10" class="closeBtn">&times;</span>
-                      <h2>Via 57 West</h2>
+                      <h2>5 Manhattan West</h2>
                   </div>
                   <div class="modal-body">
                       <div id="map10" class="map"></div>
@@ -205,22 +205,28 @@
         </div>  
       </div>
       <div>
-        <button id="modalBtn" class="button">Click Here</button>
+        <button id="modalBtn" class="button2">Enter E-mail to receive updates</button>
         <div id="simpleModal" class="modal">
             <div class="modal-content">
-                <div class="modal-header"><span id="closeBtn">&times;</span>
-                    <h2>Modal Header</h2>
+                <div class="modal-header"><span id="closeBtn" class="closeBtn">&times;</span>
+                    <h2>Stay in touch: </h2>
                 </div>
                 <div class="modal-body">
-                    <div id="map"></div>
+                    <p id="message"></p>
+                  <form>
+                    <label for="E-Mail">Enter e-mail address:</label><br>
+                    <input type="email" name="E-Mail" id="emailEntry">
+                    <button id="emailSub" class="button">Submit</button>
+                  </form>
                 </div>
                 <div class="modal-footer">
-                    <h3>Modal Footer</h3>
+                    <h3>Thank You</h3>
                 </div>
             </div>
         </div>
       </div>
     </section>
+    <footer id="showWeather">Today's weather in </footer>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDIsc7FDtkgQ5cnmUbDlFDLtVExIXErBM4&callback=initMap"
     async defer></script>
     <script src="./assets/js/main.js"></script>
