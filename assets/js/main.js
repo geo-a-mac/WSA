@@ -45,7 +45,7 @@ var message = document.getElementById("message");
 // 2. formate & display weather
 var getWeather = function() {
   // format the openweather api url
-  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=New&20York&units=imperial&appid=80ef5c6717f3834714ead7f302cc767c";
+  var apiUrl = "https://api.openweathermap.org/data/2.5/forecast?q=New%20York&units=imperial&appid=80ef5c6717f3834714ead7f302cc767c";
   
   // make a get request to url
   fetch(apiUrl)
